@@ -1,52 +1,52 @@
-<?php include('./templates/_partials/head.php'); ?>
+<?php include('../_partials/head.php'); ?>
 
 <div class = "container mt-4">
     <div class = "card">
         <div class = "card-header">
-            <h2 class = "text-center">Bienvenido</h2>
+            <h2 class = "text-center">Bienvenido </h2>
         </div>
         <div class = "card-body">
             <h4 class = "text-center">Ingresa los datos por favor</h4>
-            <form id = "form" autocomplete = "off" mmethod = "POST" action = "sql/ingresar_datos.php">
+            <form id="form" autocomplete="off" method="POST" action="../../request/request.php">
                 
                 <div class="form-row">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" name = "nombre" id="nombre" placeholder="Ingresa el nombre">
+                        <input type="text" class="form-control" name ="nombre" id="nombre" placeholder="Ingresa el nombre" required>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Primer Apellido</label>
-                        <input type="text" class="form-control" name = "apellido1" id="apellido1" placeholder="Ingresa el primer apellido">
+                        <input type="text" class="form-control" name ="apellido1" id="apellido1" placeholder="Ingresa el primer apellido" required>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Segundo Apellido</label>
-                        <input type="text" class="form-control" name = "apellido2" id="apellido2" placeholder="Ingresa el segundo apellido">
+                        <input type="text" class="form-control" name ="apellido2" id="apellido2" placeholder="Ingresa el segundo apellido" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Direccion</label>
-                    <input type="text" class="form-control" name = "direccion" id="direccion" placeholder="Ingresa la dirección">
+                    <input type="text" class="form-control" name ="direccion" id="direccion" placeholder="Ingresa la dirección" required>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Municipio</label>
-                        <input type="text" class="form-control" name = "municipio" id="municipio" placeholder="Ingresa el municipio">
+                        <input type="text" class="form-control" name ="municipio" id="municipio" placeholder="Ingresa el municipio" required>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Departamento</label>
-                        <input type="text" class="form-control" name = "departamento" id="departamento" placeholder="Ingresa el segundo apellido">
+                        <input type="text" class="form-control" name ="departamento" id="departamento" placeholder="Ingresa el segundo apellido" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Telefono</label>
-                        <input type="text" class="form-control" name = "telefono" id="telefono" placeholder="Ingresa el numero de telefono">
+                        <input type="text" class="form-control" name ="telefono" id="telefono" placeholder="Ingresa el numero de telefono" required>
                     </div>
 
                     <div class="form-group col-md-6">
@@ -62,7 +62,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Correo</label>
-                        <input type="text" class="form-control" name = "correo" id="correo" placeholder="Ingresa el correo">
+                        <input type="text" class="form-control" name ="correo" id="correo" placeholder="Ingresa el correo" required>
                     </div>
 
                     <div class="form-group col-md-6">
@@ -77,20 +77,19 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Fecha de ingreso</label>
-                        <input type="date" class="form-control" id="fecha" name = "fecha">
+                        <input type="date" class="form-control" id="fecha" name = "fecha" required>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Salario Mensual</label>
-                        <input type="number" class="form-control" name = "salario" id="salario" placeholder = "Ingresa el salario mensual">
+                        <input type="number" class="form-control" name ="salario" id="salario" placeholder = "Ingresa el salario mensual" required>
                     </div>
                 </div>
-                
-                <button type="submit" class="btn btn-info btn-block">Actualizar datos</button>
+                <input type="submit" class="btn btn-info btn-block" value="Ingresar datos">
             </form>
             </div>
         </div>
     </div>
 </div>
 
-<?php include('./templates/_partials/foot.php'); ?>
+<?php include('../_partials/foot.php'); ?>

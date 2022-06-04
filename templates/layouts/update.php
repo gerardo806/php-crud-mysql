@@ -1,4 +1,4 @@
-<?php include('./templates/_partials/head.php'); ?>
+<?php include('../_partials/head.php'); ?>
 
 <main class="container mt-4">
 <div class="row d-flex justify-content-center">
@@ -125,4 +125,4 @@
 </div>
 </main>
 
-<?php include('./templates/_partials/foot.php'); ?>
+<?php include('../_partials/foot.php'); ?>

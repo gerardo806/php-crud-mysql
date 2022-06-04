@@ -1,14 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">CRUD</a>
+  <a class="navbar-brand" href="http://localhost:80/php-crud-mysql/">CRUD</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
-      <a class="nav-link active" href="#">Crear <span class="sr-only">(current)</span></a>
-      <a class="nav-link active" href="#">Leer</a>
-      <a class="nav-link active" href="#">Actualizar</a>
-      <a class="nav-link active">Eliminar</a>
+      <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/create.php" rel="noopener">
+        Crear <span class="sr-only">(current)</span>
+      </a>
+      <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/read.php">
+        Leer
+      </a>
+      <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/update.php">
+        Actualizar</a>
+      <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/delete.php">
+        Eliminar
+      </a>
     </div>
   </div>
 </nav>

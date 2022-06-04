@@ -1,4 +1,4 @@
-<?php include('./templates/_partials/head.php'); ?>
+<?php include('../_partials/head.php'); ?>
 
 <div class = "container mt-4">
     <div class = "card">
@@ -63,4 +63,4 @@
     </div>
 </div>
 
-<?php include('./templates/_partials/foot.php'); ?>
+<?php include('../_partials/foot.php'); ?>
