@@ -35,51 +35,52 @@
                         <th>Eliminar</th>
                     </tr>
                 </thead>
-                <?php
-                 $employees = all();
-                 if(!$employees) {
-                ?>
-                    <tbody>
-                        <td> - </td>
-                        <td> - </td>
-                        <td> - </td>
-                        <td> - </td>
-                        <td> - </td>
-                        <td> - </td>
-                        <td> - </td>
-                        <td> - </td>
-                        <td> - </td>
-                    </tbody>
-                <?php 
-                    }else{
-                        global $employees;
-                        while ($employee = mysqli_fetch_array($employees)){
-                ?>
-                    <tbody>
-                        <td> <?= $employee['id_nombre']; ?> </td>
-                        <td> 
-                            <?php 
-                                echo $employee['nombres'] . " ";
-                                echo $employee['primer_apellido'] . " ";
-                                echo $employee['segundo_apellido'];
-                            ?> 
-                        </td>
-                        <td> <?= $employee['complemento']; ?> </td>
-                        <td> <?= $employee['numero']; ?> </td>
-                        <td> <?= $employee['correo']; ?> </td>
-                        <td> <?= $employee['fecha_ingreso']; ?> </td>
-                        <td> <?= $employee['salario_mensual']; ?> </td>
-                        <td> 
-                            <a class="btn btn-secondary" href="#">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a> 
-                        </td>
-                        <td>
-                            <a class="btn btn-danger" href="#">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </td>
-                <?php }} ?>
+                <tbody>
+                    <?php
+                    $employees = all();
+                    if(!$employees) {
+                    ?>
+                        <tr>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                        </tr>
+                    <?php 
+                        }else{
+                            global $employees;
+                            while ($employee = mysqli_fetch_array($employees)){
+                    ?>    
+                        <tr>
+                            <td> <?= $employee['id_nombre']; ?> </td>
+                            <td> 
+                                <?= $employee['nombres']; ?>
+                                <?= $employee['primer_apellido']; ?>
+                                <?= $employee['segundo_apellido']; ?> 
+                            </td>
+                            <td> <?= $employee['complemento']; ?> </td>
+                            <td> <?= $employee['numero']; ?> </td>
+                            <td> <?= $employee['correo']; ?> </td>
+                            <td> <?= $employee['fecha_ingreso']; ?> </td>
+                            <td> <?= $employee['salario_mensual']; ?> </td>
+                            <td> 
+                                <a class="btn btn-secondary" href="#">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </a> 
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" href="#">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php }} ?>
+                </tbody>
             </table>
         </div>
     </div>
