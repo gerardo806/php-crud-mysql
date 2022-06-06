@@ -11,7 +11,7 @@
                 
                 <div class="form-row">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" name ="nombre" id="nombre" placeholder="Ingresa el nombre" required>
+                        <input type="text" class="form-control" name ="nombre" id="nombre" placeholder="Ingresa el nombre">
                 </div>
 
                 <div class="form-row">

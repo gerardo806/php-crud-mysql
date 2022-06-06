@@ -123,8 +123,18 @@ function add($array_date){
         $verifyQuerys = true;
     }
 
-    if ($verifyQuerys) echo "ok";
-    else echo "Query Failed";
+    if ($verifyQuerys)
+    {
+        $_SESSION['message'] = "Register saved successfully";
+    }
+    else
+    {
+        $_SESSION['message'] = "Query Failed";
+    }
+    
+    $url = "http://localhost:80/php-crud-mysql/templates/layouts/read.php";
+    header("Location: $url");
+    exit();
 }
 
 

@@ -23,5 +23,16 @@ foreach($requestHttp as $key => $value)
     if (!empty($value)) $verifyRequest = true;
 }
 
-if ($verifyRequest) add($requestHttp);
-else header('Location: http://localhost:80/php-crud-mysql/', true, 401);
+$url = "http://localhost:80/php-crud-mysql/templates/layouts/read.php";
+
+if ($verifyRequest){ 
+    add($requestHttp);
+}
+else{
+    $_SESSION['message'] = 'Date invalid'; 
+}
+
+header("Location: $url");
+exit();
+
+?>

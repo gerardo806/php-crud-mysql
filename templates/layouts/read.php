@@ -1,6 +1,17 @@
+<?php include('../../db/connect.php'); ?>
 <?php include('../_partials/head.php'); ?>
 
 <div class = "container mt-4">
+
+    <?php if(isset($_SESSION['message'])){?>
+        <div class="alert alert-primary alert-dismissible fade show myt-3" role="alert">
+            <strong>Message!</strong> <?= $_SESSION['message']?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php session_unset(); }?>
+
     <div class = "card">
         <div class = "card-header">
             <h2 class = "text-center">Bienvenido</h2>
@@ -20,8 +31,6 @@
                 </thead>
 
                 <?php
-
-                include("../Base_de_datos/conexion.php");
 
                 /*
                 $consulta = (
