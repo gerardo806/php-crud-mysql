@@ -17,10 +17,10 @@
 
     <div class = "card">
         <div class = "card-header">
-            <h2 class = "text-center">Bienvenido</h2>
+            <h2 class = "text-center">Empleados</h2>
         </div>
         <div class = "card-body">
-            <h4 class = "text-center">Estos son los datos que tenemos en nuestra base de datos</h4>
+            <h4 class = "text-center">Personal registrado en el área de ventas</h4>
             <table class = "table">
                 <thead>
                     <tr>
