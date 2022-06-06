@@ -6,15 +6,10 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
       <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/create.php" rel="noopener">
-        Crear <span class="sr-only">(current)</span>
+        Crear registro <span class="sr-only">(current)</span>
       </a>
       <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/read.php">
-        Leer
-      </a>
-      <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/update.php">
-        Actualizar</a>
-      <a class="nav-link active" href="http://localhost:80/php-crud-mysql/templates/layouts/delete.php">
-        Eliminar
+        Empleados
       </a>
     </div>
   </div>

@@ -29,7 +29,8 @@ if ($verifyRequest){
     add($requestHttp);
 }
 else{
-    $_SESSION['message'] = 'Date invalid'; 
+    $_SESSION['message'] = 'Datos invalidos';
+    $_SESSION['type_message'] = "alert-warning";
 }
 
 header("Location: $url");

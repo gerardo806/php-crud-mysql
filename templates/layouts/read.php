@@ -1,11 +1,14 @@
-<?php include('../../db/connect.php'); ?>
-<?php include('../_partials/head.php'); ?>
+<?php 
+    //include('../../db/connect.php'); 
+    include('../_partials/head.php');
+    include('../../db/querys.php');
+?>
 
 <div class = "container mt-4">
 
     <?php if(isset($_SESSION['message'])){?>
-        <div class="alert alert-primary alert-dismissible fade show myt-3" role="alert">
-            <strong>Message!</strong> <?= $_SESSION['message']?>
+        <div class="alert <?= $_SESSION['type_message'] ?> alert-dismissible fade show myt-3" role="alert">
+            <strong>Nuevo mensaje!</strong> <?= $_SESSION['message']?>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -21,52 +24,62 @@
             <table class = "table">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nombre completo</th>
                         <th>Direccion</th>
                         <th>Telefonos</th>
                         <th>Correo</th>
                         <th>Fecha de ingreso</th>
                         <th>Salario mensual</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
-
                 <?php
-
-                /*
-                $consulta = (
-                    'select
-                        concat_ws(' ', n.nombres, n.primer_apellido, n.segundo_apellido) nombre,
-                        concat_ws(' ', d.complemento, m.municipio, dp.departamento) direccion,
-                        (
-                            select
-                                group_concat(t.numero separator ' / ')
-                            from telefono t
-                                where t.id_empleado = e.id_empleado
-                        ) telefono,
-                        (
-                            select
-                                group_concat(c.correo separator ' / ')
-                            from correo c
-                                where t.id_empleado = e.id_empleado
-                        ) correo,
-                        e.fecha_ingreso,
-                        e.salario_mensual
-                    from nombre n
-                        inner join empleado e
-                            on n.id_empleado = e.id_empleado
-                        inner join direccion d
-                            on d.id_empleado = e.id_empleado
-                        inner join municipio m
-                            on m.id_municipio = d.id_municipio
-                        inner join departamento dp
-                            on dp.id_departamento = m.id_departamento
-                    inner join correo c
-                            on c.id_empleado =     e.id_empleado'
-
-                );
-
-               */ ?>
-
+                 $employees = all();
+                 if(!$employees) {
+                ?>
+                    <tbody>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                    </tbody>
+                <?php 
+                    }else{
+                        global $employees;
+                        while ($employee = mysqli_fetch_array($employees)){
+                ?>
+                    <tbody>
+                        <td> <?= $employee['id_nombre']; ?> </td>
+                        <td> 
+                            <?php 
+                                echo $employee['nombres'] . " ";
+                                echo $employee['primer_apellido'] . " ";
+                                echo $employee['segundo_apellido'];
+                            ?> 
+                        </td>
+                        <td> <?= $employee['complemento']; ?> </td>
+                        <td> <?= $employee['numero']; ?> </td>
+                        <td> <?= $employee['correo']; ?> </td>
+                        <td> <?= $employee['fecha_ingreso']; ?> </td>
+                        <td> <?= $employee['salario_mensual']; ?> </td>
+                        <td> 
+                            <a class="btn btn-secondary" href="#">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a> 
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="#">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                <?php }} ?>
             </table>
         </div>
     </div>

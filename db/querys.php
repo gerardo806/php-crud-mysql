@@ -125,11 +125,13 @@ function add($array_date){
 
     if ($verifyQuerys)
     {
-        $_SESSION['message'] = "Register saved successfully";
+        $_SESSION['message'] = "Registro guardado satisfactoriamente!";
+        $_SESSION['type_message'] = "alert-success";
     }
     else
     {
-        $_SESSION['message'] = "Query Failed";
+        $_SESSION['message'] = "Hubo un error al insertar el registro";
+        $_SESSION['type_message'] = "alert-danger";
     }
     
     $url = "http://localhost:80/php-crud-mysql/templates/layouts/read.php";
@@ -140,7 +142,32 @@ function add($array_date){
 
 
 function all()
-{}
+{
+    global $conn;
+    $employees = "
+        SELECT
+        id_nombre,
+        nombres,
+        primer_apellido,
+        segundo_apellido,
+        complemento, 
+        numero,
+        correo,
+        fecha_ingreso,
+        salario_mensual
+    FROM
+        nombre
+        INNER JOIN empleado 
+            ON nombre.id_empleado = empleado.id_empleado
+        INNER JOIN direccion 
+            ON nombre.id_empleado = direccion.id_empleado
+        INNER JOIN telefono 
+            ON empleado.id_empleado = telefono.id_datos_persona
+        INNER JOIN correo 
+            ON empleado.id_empleado = correo.id_empleado
+    ";
+    return mysqli_query($conn, $employees);
+}
 
 function remove()
 {}
